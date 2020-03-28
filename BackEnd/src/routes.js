@@ -11,6 +11,7 @@ const routes = express.Router();
 routes.post('/sessions', SessionsController.create);
 //Rota criada em arquivo separado
 routes.post('/ongs', OngController.create);
+routes.get('/ongs', OngController.index);
 //Deleta a ong
 //routes.delete('/ongs', OngController.delete);
 

@@ -11,8 +11,9 @@ const app = express();
 //Determina que se está utilizando requisições estruturadas
 app.use(express.json());
 //está se utilizando das rotas ja criadas no arquivo routes.js
-app.use(routes)
 app.use(cors());
+app.use(routes)
+
 
 
 //Localhost:3333 / cxaminho da aplicação a ser utilizada
