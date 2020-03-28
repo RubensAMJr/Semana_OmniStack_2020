@@ -13,7 +13,7 @@ export default function NewIncident(){
     const [description,setDescription] = useState('');
     const [value,setvalue] = useState('');
 
-    const ongId = localStorage.getItem('ondId')
+    const ongId = localStorage.getItem('ongId')
     const history = useHistory();
 
     async function handleNewIncident(e){
@@ -35,6 +35,8 @@ export default function NewIncident(){
            })
 
           console.log(response)
+
+          history.push('/profile');
          } catch (err) {
            alert('Erro ao cadastrar caso, tente novamente.')
          }
@@ -54,7 +56,7 @@ export default function NewIncident(){
          </Link>
       </section>
 
-      <form>
+      <form onSubmit={handleNewIncident}>
         <input 
           placeholder="Titulo do caso"
           value={title}
@@ -71,7 +73,7 @@ export default function NewIncident(){
           onChange={e => setvalue(e.target.value)}
         />
 
-        <button onClick={handleNewIncident} className="button" type="submit">Cadastrar </button>
+        <button className="button" type="submit">Cadastrar </button>
       </form>
 
     </div>
